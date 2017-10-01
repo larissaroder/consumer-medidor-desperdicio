@@ -1,0 +1,40 @@
+<div id="dashboards" class="panel panel-default">
+	<div class="panel-heading">
+		<span class="panel-title">Locais e Medidas</span>
+	</div>
+
+	<div class="panel dashboard panel-body">
+		<h4 style="cursor: pointer;">Atualizar dashboard &nbsp; <i class="fa fa-refresh" title="Atualizar" ng-click="refresh()"></i></h4>
+		<div class="row resume" ng-repeat="dashboard in dashboards | orderBy: 'place.description'" >
+			
+			<div class="col-sm-4" ng-repeat="sensor in dashboard.place.sensors  | orderBy: 'historic.date'" ng-if="dashboard.place.sensors[$index].historic">
+				<h4 ng-if="sensor.historic">{{dashboard.place.description}}</h4>
+				<div class="{{sensor.critical}} row" ng-if="sensor.historic"ng-if="sensor.historic">
+					<div class="col-xs-12 icon">
+						<i class="{{sensor.icon}}"></i>
+					</div>
+					<div class="dinamicNumberLabel">
+							<span class="dinamicNumber"  ng-if="sensor.sensorType != 'PLUVIOMETER'">
+								{{sensor.historic.value}}{{sensor.unit}}
+							</span>
+							<span class="dinamicNumber"  ng-if="sensor.sensorType == 'PLUVIOMETER'">
+								Tempo
+								</span>
+							<p>
+								Última atualização: {{sensor.historic.date | date: 'dd/MM/yyyy HH:mm'}}
+							
+								</p>
+								<p ng-if="sensor.sensorType == 'PLUVIOMETER'">
+									<br>
+								</p>
+
+								<p ng-if="sensor.sensorType != 'PLUVIOMETER'">
+										Valor Máximo permitido {{sensor.configuration.maxValueUnit}}{{sensor.unit}}
+								</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	

@@ -1,0 +1,18 @@
+<div class="page-header text-center">
+	<h1>Local</h1>
+</div>
+
+<form>
+	<div class="form-group">
+		<label>Descrição</label>
+		<input name="descricao" class="form-control" ng-model="description" required>
+	</div>
+	<div class="form-group">
+		<label>Sensores</label>
+		<select name="grupo" ng-model="sensor" class="form-control" ng-options="sensor.id as (sensor.description | uppercase) for sensor in sensors">
+					<option value="">Escolha um sensor</option>
+				</select>
+	</div>
+
+
+</form>

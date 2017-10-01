@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="hackathon">
+
+<head>
+	<base href="/">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Hackathon</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/dashboard.css">
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-animate.min.js"></script>
+	<script src="js/lib/angular-route.min.js"></script>
+	<script src="js/lib/angular-resource.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/controllers/hackathon-controller.js"></script>
+	<script src="js/services/sensor-service.js"></script>
+	<script src="js/services/dashboard-service.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<div style="padding-left:13%;" class="row">
+				<div class="col-md-4"><img src="tree.png" height="150" width="150"></div>
+				<div class="col-md-4"><span style="font-size:80px;font-weight:bold;" class="text-center">DB1S</span></div>
+				<div class="col-md-4"><img src="tree.png" height="150" width="150"></div>
+			</div>
+
+		</div>
+		<ng-view></ng-view>
+
+	</div>
+	<!-- fim container -->
+</body>
+
+</html>
